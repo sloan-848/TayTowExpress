@@ -21,7 +21,7 @@ app.set('view engine', 'jade');
 app.use(expressWinston.logger({
   transports: [
     new winston.transports.File({
-      filename: 'logs/taylor_log',
+      filename: 'logs/taylor.log',
       timestamp: true,
       json: true,
       colorize: true
