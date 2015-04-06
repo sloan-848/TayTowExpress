@@ -5,13 +5,26 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// set up winston logging
 var expressWinston = require('express-winston');
 var winston = require('winston');
 
+// set up mongo database
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:2000/taylor', function(err) {
+    if(err) {
+        console.log('mongodb connection error', err);
+    } else {
+        console.log('mongodb connection successful');
+    }
+});
+
+// set up api routes
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var votes = require('./routes/votes');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,7 +56,8 @@ app.use(express.static(path.join(__dirname, 'public'), {
   dotfiles: 'ignore'
 }));
 
-app.use('/api', routes);
+app.use('/api/', votes);
+app.use('/', routes);
 
 
 // 404 Handler
