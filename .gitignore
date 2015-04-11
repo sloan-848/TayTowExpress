@@ -17,6 +17,3 @@ data
 
 # logs
 logs
-
-# exclude static directory since this is another Git repo
-public
