@@ -56,8 +56,8 @@ app.use(express.static(path.join(__dirname, 'public'), {
   dotfiles: 'ignore'
 }));
 
-app.use('/api/', votes);
 app.use('/', routes);
+app.use('/api/', votes);
 
 
 // 404 Handler

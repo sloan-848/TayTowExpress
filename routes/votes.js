@@ -17,7 +17,7 @@ router.get('/votes', function(req,res) {
 });
 
 
-router.post('/votes', function(req,res) {
+/*router.post('/votes', function(req,res) {
   var sub_email = req.body.email;
   var sub_pres = req.body.president;
   var sub_vicepres = req.body.vice_president;
@@ -56,6 +56,6 @@ router.post('/votes', function(req,res) {
   else {
     res.send("Invalid form data");
   }
-});
+});*/
 
 module.exports = router;
