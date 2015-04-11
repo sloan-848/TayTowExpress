@@ -1,0 +1,3 @@
+[submodule "TayTowWebsite"]
+	path = ./public
+	url = https://github.com/sloan-848/TayTowWebsite
