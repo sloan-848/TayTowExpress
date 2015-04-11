@@ -13,6 +13,14 @@ router.post('/pullGit', function(req, res, next) {
         console.log('exec error: ' + error);
       }
   });
+  child = exec('sh ' + __dirname + '/../scripts/getDVD_Log.sh',
+    function(error, stdout, stderr) {
+      console.log('stdout: ' + stdout);
+      console.log('stderr: ' + stderr);
+      if(error !== null){
+        console.log('exec error: ' + error);
+      }
+  });
   res.send('It Worked!');
 });
 

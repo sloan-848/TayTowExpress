@@ -62,7 +62,7 @@ app.use('/api/', votes);
 
 // 404 Handler
 app.use(function(req, res) {
-  res.redirect('/404/');
+  res.redirect('404.html');
 });
 
 
