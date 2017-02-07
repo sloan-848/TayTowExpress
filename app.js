@@ -34,7 +34,7 @@ app.set('view engine', 'jade');
 app.use(expressWinston.logger({
   transports: [
     new winston.transports.File({
-      filename: 'logs/taylor.log',
+      filename: __dirname + '/logs/taylor.log',
       timestamp: true,
       json: true,
       colorize: true
@@ -62,7 +62,7 @@ app.use('/api/', votes);
 
 // 404 Handler
 app.use(function(req, res) {
-  res.redirect('http://taylortower.org/404.html');
+  res.redirect('http://taylortower.848.productions/404.html');
 });
 
 
